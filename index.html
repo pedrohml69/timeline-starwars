@@ -1,33 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Star Wars — Linha do Tempo</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;500&display=swap" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <section>
-        <div class="timeline-part">
-            <div class="timeline">
-                
+
+  <canvas id="starfield"></canvas>
+
+  <div class="scanlines"></div>
+  <div class="vignette"></div>
+  <div class="force-glow" id="forceGlow"></div>
+
+  <div class="hyperspace-ray" style="left:20%;animation-delay:-1s;opacity:0.5;"></div>
+  <div class="hyperspace-ray" style="left:50%;animation-delay:-2.5s;"></div>
+  <div class="hyperspace-ray" style="left:75%;animation-delay:-0.5s;opacity:0.5;"></div>
+
+  <svg class="ship ship-1" width="90" height="44" viewBox="0 0 90 44">
+    <polygon points="45,20 0,44 10,22 0,0" fill="#c0b080" opacity="0.9"/>
+    <polygon points="45,20 90,44 80,22 90,0" fill="#c0b080" opacity="0.9"/>
+    <rect x="15" y="19" width="60" height="5" rx="2" fill="#d4c890"/>
+    <circle cx="45" cy="21" r="5" fill="#ffe81f" opacity="0.6"/>
+    <rect x="12" y="20" width="4" height="3" fill="#ffe81f" opacity="0.5"/>
+    <rect x="74" y="20" width="4" height="3" fill="#ffe81f" opacity="0.5"/>
+  </svg>
+
+  <svg class="ship ship-2" width="80" height="60" viewBox="0 0 80 60">
+    <rect x="0" y="10" width="22" height="40" rx="2" fill="#556" opacity="0.85"/>
+    <rect x="58" y="10" width="22" height="40" rx="2" fill="#556" opacity="0.85"/>
+    <line x1="22" y1="30" x2="32" y2="30" stroke="#778" stroke-width="2"/>
+    <line x1="48" y1="30" x2="58" y2="30" stroke="#778" stroke-width="2"/>
+    <circle cx="40" cy="30" r="12" fill="#445" stroke="#667" stroke-width="1.5"/>
+    <circle cx="40" cy="30" r="6" fill="#ffe81f" opacity="0.2"/>
+  </svg>
+
+  <svg class="ship ship-3" width="100" height="70" viewBox="0 0 100 70">
+    <ellipse cx="48" cy="38" rx="44" ry="26" fill="#8a8070" opacity="0.9"/>
+    <ellipse cx="48" cy="36" rx="28" ry="16" fill="#9a9080"/>
+    <rect x="60" y="24" width="22" height="14" rx="4" fill="#7a7060"/>
+    <circle cx="34" cy="34" r="10" fill="#6a6050" stroke="#aaa090" stroke-width="1"/>
+  </svg>
+
+  <div class="logo">
+    <span class="logo-star">STAR</span>
+    <span class="logo-wars">WARS</span>
+  </div>
+
+  <div class="episode-badge" id="episodeBadge">EPISÓDIO I</div>
+
+  <section>
+    <div class="timeline-part">
+      <div class="slides-wrapper" id="slidesWrapper">
+
+        <div class="slide active">
+          <span class="bg-year">I</span>
+
+          <div class="slide-content">
+            <div class="slide-left">
+              <span class="slide-ep">Episódio I — 32 BBY</span>
+
+              <h1 class="slide-title">
+                A Ameaça<br>Fantasma
+              </h1>
+
+              <p class="slide-date">
+                32 ANTES DA BATALHA DE YAVIN
+              </p>
+
+              <p class="slide-desc">
+                A Federação do Comércio bloqueia o pacífico planeta Naboo.
+              </p>
             </div>
-            <div class="text-part">
-                <h1>Sei la</h1>
-                <p>algo aconteceu q eu n tenho a minima ideia do q seja no presente momento.</p>
+
+            <div class="slide-right">
+              <div class="char-frame">
+                <div class="char-img-loading" id="img-container-0">
+                  CARREGANDO...
+                </div>
+              </div>
+
+              <span class="char-name" id="char-name-0"></span>
             </div>
-        </div>
-        <div class="pass">
-            <button><</button>
-            <div class="retangle-part">
-                <div class="retangle"></div>
-                <div class="retangle ativo"></div>
-                <div class="retangle"></div>
-                <div class="retangle"></div>
-            </div>
-            <button>></button>
+          </div>
         </div>
 
-    </section>
+      </div>
+    </div>
+
+    <div class="pass">
+      <button class="nav-btn" id="btnPrev">&#8592;</button>
+
+      <div class="retangle-part" id="indicators"></div>
+
+      <button class="nav-btn" id="btnNext">&#8594;</button>
+    </div>
+  </section>
+
+  <script src="index.js"></script>
 </body>
 </html>

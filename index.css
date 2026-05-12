@@ -1,78 +1,185 @@
+:root {
+  --gold: #ffe81f;
+  --gold-dim: #c9b80f;
+  --dark: #030712;
+  --panel: rgba(255,232,31,0.04);
+  --line: rgba(255,232,31,0.25);
+  --text: #d4cba8;
+  --white: #f0ead8;
+}
+
 *{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-section{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+body{
+  background:var(--dark);
+  font-family:'Exo 2',sans-serif;
+  overflow:hidden;
+  height:100vh;
+  width:100vw;
+  color:var(--text);
 }
 
-.timeline-part{
-    width: 100%;
-    height: auto;
+#starfield{
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
 }
 
-.timeline{
-    position: relative;
-    height: auto;
-    height: 400px;
+.ship{
+  position:fixed;
+  z-index:1;
+  pointer-events:none;
+  opacity:.55;
+  filter:drop-shadow(0 0 6px var(--gold));
 }
 
-.timeline::before{
-    content: " ";
-    position: absolute;
-    width: 80%;
-    right: 0;
-    margin-top: 300px;
-    background-color: black;
-    height: 10px;
-    border-bottom-left-radius: 15px;
-     border-top-left-radius: 15px;
+.ship-1{
+  animation:flyShip1 28s linear infinite;
+  top:18%;
 }
 
-.text-part{
-    width: 250px;
-    text-align: left;
-    margin: 50px 50px 50px 150px;
+.ship-2{
+  animation:flyShip2 38s linear infinite;
+  top:65%;
+  animation-delay:-14s;
 }
 
-.pass{
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 200px
+.ship-3{
+  animation:flyShip3 22s linear infinite;
+  top:40%;
+  animation-delay:-8s;
+  opacity:.3;
 }
 
-.retangle{
-    background-color: rgb(219, 219, 219);
-    width: 30px;
-    height: 10px;
+@keyframes flyShip1{
+  from{
+    left:-120px;
+    transform:scaleX(1);
+  }
+
+  49.9%{
+    left:calc(100vw + 120px);
+    transform:scaleX(1);
+  }
+
+  50%{
+    left:calc(100vw + 120px);
+    transform:scaleX(-1);
+  }
+
+  to{
+    left:-120px;
+    transform:scaleX(-1);
+  }
 }
 
-.retangle-part{
-      width: auto;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+@keyframes flyShip2{
+  from{
+    left:calc(100vw + 100px);
+    transform:scaleX(-1);
+  }
+
+  49.9%{
+    left:-100px;
+    transform:scaleX(-1);
+  }
+
+  50%{
+    left:-100px;
+    transform:scaleX(1);
+  }
+
+  to{
+    left:calc(100vw + 100px);
+    transform:scaleX(1);
+  }
 }
 
-.ativo{
-    background-color: rgb(71, 71, 71);
+@keyframes flyShip3{
+  from{
+    left:-80px;
+    transform:scaleX(1) scale(.6);
+  }
+
+  to{
+    left:calc(100vw + 80px);
+    transform:scaleX(1) scale(.6);
+  }
 }
 
-button{
-    background-color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 40px;
-    font-weight: 500;
+.logo{
+  position:fixed;
+  top:28px;
+  left:40px;
+  z-index:100;
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.logo-star{
+  font-family:'Orbitron',sans-serif;
+  font-size:18px;
+  font-weight:900;
+  color:var(--gold);
+}
+
+.logo-wars{
+  font-family:'Orbitron',sans-serif;
+  font-size:18px;
+  color:var(--white);
+}
+
+.slide{
+  min-width:100%;
+  height:100%;
+  display:flex;
+  align-items:center;
+}
+
+.slide-content{
+  display:grid;
+  grid-template-columns:1fr 360px;
+  width:100%;
+  padding:0 60px;
+}
+
+.slide-title{
+  font-family:'Orbitron',sans-serif;
+  font-size:42px;
+  color:var(--white);
+  margin-bottom:12px;
+}
+
+.slide-desc{
+  max-width:460px;
+  line-height:1.7;
+}
+
+.char-frame{
+  width:300px;
+  height:300px;
+  position:relative;
+}
+
+.char-img{
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+.nav-btn{
+  background:none;
+  border:1px solid rgba(255,232,31,.3);
+  color:var(--gold);
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  cursor:pointer;
 }
