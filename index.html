@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Star Wars — Linha do Tempo</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;500&display=swap" rel="stylesheet"/>
-
-  <link rel="stylesheet" href="index.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+    <link rel="stylesheet" href="index.css">
 </head>
+
 <body>
 
   <canvas id="starfield"></canvas>
-
   <div class="scanlines"></div>
   <div class="vignette"></div>
   <div class="force-glow" id="forceGlow"></div>
@@ -22,28 +23,37 @@
   <div class="hyperspace-ray" style="left:75%;animation-delay:-0.5s;opacity:0.5;"></div>
 
   <svg class="ship ship-1" width="90" height="44" viewBox="0 0 90 44">
-    <polygon points="45,20 0,44 10,22 0,0" fill="#c0b080" opacity="0.9"/>
-    <polygon points="45,20 90,44 80,22 90,0" fill="#c0b080" opacity="0.9"/>
-    <rect x="15" y="19" width="60" height="5" rx="2" fill="#d4c890"/>
-    <circle cx="45" cy="21" r="5" fill="#ffe81f" opacity="0.6"/>
-    <rect x="12" y="20" width="4" height="3" fill="#ffe81f" opacity="0.5"/>
-    <rect x="74" y="20" width="4" height="3" fill="#ffe81f" opacity="0.5"/>
+    <polygon points="45,20 0,44 10,22 0,0" fill="#c0b080" opacity="0.9" />
+    <polygon points="45,20 90,44 80,22 90,0" fill="#c0b080" opacity="0.9" />
+    <rect x="15" y="19" width="60" height="5" rx="2" fill="#d4c890" />
+    <circle cx="45" cy="21" r="5" fill="#ffe81f" opacity="0.6" />
+    <rect x="12" y="20" width="4" height="3" fill="#ffe81f" opacity="0.5" />
+    <rect x="74" y="20" width="4" height="3" fill="#ffe81f" opacity="0.5" />
   </svg>
 
   <svg class="ship ship-2" width="80" height="60" viewBox="0 0 80 60">
-    <rect x="0" y="10" width="22" height="40" rx="2" fill="#556" opacity="0.85"/>
-    <rect x="58" y="10" width="22" height="40" rx="2" fill="#556" opacity="0.85"/>
-    <line x1="22" y1="30" x2="32" y2="30" stroke="#778" stroke-width="2"/>
-    <line x1="48" y1="30" x2="58" y2="30" stroke="#778" stroke-width="2"/>
-    <circle cx="40" cy="30" r="12" fill="#445" stroke="#667" stroke-width="1.5"/>
-    <circle cx="40" cy="30" r="6" fill="#ffe81f" opacity="0.2"/>
+    <rect x="0" y="10" width="22" height="40" rx="2" fill="#556" opacity="0.85" />
+    <rect x="58" y="10" width="22" height="40" rx="2" fill="#556" opacity="0.85" />
+    <line x1="22" y1="30" x2="32" y2="30" stroke="#778" stroke-width="2" />
+    <line x1="48" y1="30" x2="58" y2="30" stroke="#778" stroke-width="2" />
+    <circle cx="40" cy="30" r="12" fill="#445" stroke="#667" stroke-width="1.5" />
+    <circle cx="40" cy="30" r="6" fill="#ffe81f" opacity="0.2" />
+    <line x1="0" y1="20" x2="22" y2="20" stroke="#667" stroke-width="0.5" />
+    <line x1="0" y1="30" x2="22" y2="30" stroke="#667" stroke-width="0.5" />
+    <line x1="0" y1="40" x2="22" y2="40" stroke="#667" stroke-width="0.5" />
+    <line x1="58" y1="20" x2="80" y2="20" stroke="#667" stroke-width="0.5" />
+    <line x1="58" y1="30" x2="80" y2="30" stroke="#667" stroke-width="0.5" />
+    <line x1="58" y1="40" x2="80" y2="40" stroke="#667" stroke-width="0.5" />
   </svg>
 
   <svg class="ship ship-3" width="100" height="70" viewBox="0 0 100 70">
-    <ellipse cx="48" cy="38" rx="44" ry="26" fill="#8a8070" opacity="0.9"/>
-    <ellipse cx="48" cy="36" rx="28" ry="16" fill="#9a9080"/>
-    <rect x="60" y="24" width="22" height="14" rx="4" fill="#7a7060"/>
-    <circle cx="34" cy="34" r="10" fill="#6a6050" stroke="#aaa090" stroke-width="1"/>
+    <ellipse cx="48" cy="38" rx="44" ry="26" fill="#8a8070" opacity="0.9" />
+    <ellipse cx="48" cy="36" rx="28" ry="16" fill="#9a9080" />
+    <rect x="60" y="24" width="22" height="14" rx="4" fill="#7a7060" />
+    <circle cx="34" cy="34" r="10" fill="#6a6050" stroke="#aaa090" stroke-width="1" />
+    <circle cx="34" cy="34" r="5" fill="#555045" stroke="#aaa090" stroke-width="0.5" />
+    <rect x="10" y="34" width="8" height="4" rx="1" fill="#ffe81f" opacity="0.4" />
+    <ellipse cx="48" cy="38" rx="44" ry="26" fill="none" stroke="#aaa090" stroke-width="0.5" opacity="0.5" />
   </svg>
 
   <div class="logo">
@@ -57,34 +67,134 @@
     <div class="timeline-part">
       <div class="slides-wrapper" id="slidesWrapper">
 
-        <div class="slide active">
+        <div class="slide active" data-ep="EPISÓDIO I" data-char-id="10">
           <span class="bg-year">I</span>
-
           <div class="slide-content">
             <div class="slide-left">
               <span class="slide-ep">Episódio I — 32 BBY</span>
-
-              <h1 class="slide-title">
-                A Ameaça<br>Fantasma
-              </h1>
-
-              <p class="slide-date">
-                32 ANTES DA BATALHA DE YAVIN
-              </p>
-
+              <h1 class="slide-title">A Ameaça<br />Fantasma</h1>
+              <p class="slide-date">32 ANTES DA BATALHA DE YAVIN</p>
               <p class="slide-desc">
-                A Federação do Comércio bloqueia o pacífico planeta Naboo.
+                A Federação do Comércio bloqueia o pacífico planeta Naboo. Os Jedi Qui-Gon Jinn e Obi-Wan Kenobi são
+                enviados para negociar. No caminho, eles descobrem Anakin Skywalker — uma criança com o maior poder na
+                Força já registrado —, o possível Chosen One da profecia Jedi.
               </p>
             </div>
-
             <div class="slide-right">
               <div class="char-frame">
-                <div class="char-img-loading" id="img-container-0">
-                  CARREGANDO...
-                </div>
+                <div class="char-img-loading" id="img-container-0">CARREGANDO...</div>
               </div>
-
               <span class="char-name" id="char-name-0"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide" data-ep="EPISÓDIO II" data-char-id="4">
+          <span class="bg-year">II</span>
+          <div class="slide-content">
+            <div class="slide-left">
+              <span class="slide-ep">Episódio II — 22 BBY</span>
+              <h1 class="slide-title">Ataque dos<br />Clones</h1>
+              <p class="slide-date">22 ANTES DA BATALHA DE YAVIN</p>
+              <p class="slide-desc">
+                Uma conspiração leva à formação do Exército Clone da República. Anakin, agora aprendiz de Obi-Wan, se
+                apaixona por Padmé Amidala e começa a ser seduzido pelo Lado Sombrio. A Batalha de Geonosis marca o
+                início das Guerras Clônicas.
+              </p>
+            </div>
+            <div class="slide-right">
+              <div class="char-frame">
+                <div class="char-img-loading" id="img-container-1">CARREGANDO...</div>
+              </div>
+              <span class="char-name" id="char-name-1"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide" data-ep="EPISÓDIO III" data-char-id="1">
+          <span class="bg-year">III</span>
+          <div class="slide-content">
+            <div class="slide-left">
+              <span class="slide-ep">Episódio III — 19 BBY</span>
+              <h1 class="slide-title">A Vingança<br />dos Sith</h1>
+              <p class="slide-date">19 ANTES DA BATALHA DE YAVIN</p>
+              <p class="slide-desc">
+                Anakin Skywalker cai para o Lado Sombrio, tornando-se Darth Vader. A Ordem 66 extermina os Jedi. O
+                Imperador Palpatine proclama o Império Galáctico. Luke e Leia nascem; a galáxia mergulha na escuridão
+                por duas décadas.
+              </p>
+            </div>
+            <div class="slide-right">
+              <div class="char-frame">
+                <div class="char-img-loading" id="img-container-2">CARREGANDO...</div>
+              </div>
+              <span class="char-name" id="char-name-2"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide" data-ep="EPISÓDIO IV" data-char-id="1">
+          <span class="bg-year">IV</span>
+          <div class="slide-content">
+            <div class="slide-left">
+              <span class="slide-ep">Episódio IV — 0 BBY</span>
+              <h1 class="slide-title">Uma Nova<br />Esperança</h1>
+              <p class="slide-date">0 — BATALHA DE YAVIN</p>
+              <p class="slide-desc">
+                Luke Skywalker descobre seu destino ao se juntar à Aliança Rebelde. Com Han Solo, Obi-Wan Kenobi e a
+                Princesa Leia, ele destrói a Estrela da Morte — a arma mais destrutiva já construída pelo Império — em
+                uma batalha que muda o rumo da galáxia.
+              </p>
+            </div>
+            <div class="slide-right">
+              <div class="char-frame">
+                <div class="char-img-loading" id="img-container-3">CARREGANDO...</div>
+              </div>
+              <span class="char-name" id="char-name-3"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide" data-ep="EPISÓDIO V" data-char-id="3">
+          <span class="bg-year">V</span>
+          <div class="slide-content">
+            <div class="slide-left">
+              <span class="slide-ep">Episódio V — 3 ABY</span>
+              <h1 class="slide-title">O Império<br />Contra-Ataca</h1>
+              <p class="slide-date">3 APÓS A BATALHA DE YAVIN</p>
+              <p class="slide-desc">
+                O Império destrói a base rebelde em Hoth. Luke treina com o Mestre Yoda em Dagobah. Em Bespin, ele
+                enfrenta Darth Vader e descobre a verdade mais sombria da galáxia: Vader é seu pai. A Aliança sofre sua
+                maior derrota.
+              </p>
+            </div>
+            <div class="slide-right">
+              <div class="char-frame">
+                <div class="char-img-loading" id="img-container-4">CARREGANDO...</div>
+              </div>
+              <span class="char-name" id="char-name-4"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide" data-ep="EPISÓDIO VI" data-char-id="2">
+          <span class="bg-year">VI</span>
+          <div class="slide-content">
+            <div class="slide-left">
+              <span class="slide-ep">Episódio VI — 4 ABY</span>
+              <h1 class="slide-title">O Retorno<br />de Jedi</h1>
+              <p class="slide-date">4 APÓS A BATALHA DE YAVIN</p>
+              <p class="slide-desc">
+                A segunda Estrela da Morte é destruída. Luke confronta o Imperador Palpatine e apela para o bem que
+                ainda existe em Anakin. Vader redime-se sacrificando-se para salvar o filho. O Império cai. A galáxia
+                celebra sua liberdade.
+              </p>
+            </div>
+            <div class="slide-right">
+              <div class="char-frame">
+                <div class="char-img-loading" id="img-container-5">CARREGANDO...</div>
+              </div>
+              <span class="char-name" id="char-name-5"></span>
             </div>
           </div>
         </div>
@@ -92,15 +202,19 @@
       </div>
     </div>
 
+    <div class="timeline-line" id="globalTimeline">
+      <div class="timeline-track" id="timelineTrack">
+        <div class="timeline-progress" id="timelineProgress"></div>
+        <!-- nós gerados pelo JS -->
+      </div>
+    </div>
+
     <div class="pass">
       <button class="nav-btn" id="btnPrev">&#8592;</button>
-
       <div class="retangle-part" id="indicators"></div>
-
       <button class="nav-btn" id="btnNext">&#8594;</button>
     </div>
   </section>
-
   <script src="index.js"></script>
 </body>
 </html>
