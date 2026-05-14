@@ -1,5 +1,4 @@
 # timeline-starwars
-# Portal Intergaláctico
 
 ## Squad 7 - Linha do Tempo da Guerra Intergalática
 
@@ -19,6 +18,18 @@ Fãs de Star Wars ou pessoas interesadas em um resumo dos momentos mais importan
 - CSS
 - JavaScript
 - Api starwars-api (Akabab) para imagens
+
+### Commit inicial
+- Teste bem basico sem nada funcional, so para começar a pensar no desing
+
+### Segundo commit
+- Versão base do projeto, agora com a base da linha do tempo, as imagens e animações
+
+### Terceiro commit
+- Linha do tempo mais interativa mostrando progresso e datas
+
+### Quarto commit
+- Filtro de partes da historia como lado sombril ou a triologia original, mudança de tema nas partes do lado sombrio e estrela da morte adicionada atras nesta parte alem de mudanças nas imagens 
 
 ### Prints do Sistema
 
