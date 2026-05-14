@@ -31,6 +31,9 @@ Fãs de Star Wars ou pessoas interesadas em um resumo dos momentos mais importan
 ### Quarto commit
 - Filtro de partes da historia como lado sombril ou a triologia original, mudança de tema nas partes do lado sombrio e estrela da morte adicionada atras nesta parte alem de mudanças nas imagens 
 
+### Versão final (main)
+- Animação de explosão no epsódio V na estrela da morte e painel para controlar as animações podendo parar elas ou visualizar elas separadamente.
+
 ### Prints do Sistema
 
 ### Organização da equipe
@@ -50,4 +53,4 @@ Renan Bertaci -
 - Melhorias no painel de animações
 
 ### Link do site
-https://seudominio.netlify.app
+https://pedrohml69.github.io/timeline-starwars/
