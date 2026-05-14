@@ -45,11 +45,11 @@ Fãs de Star Wars ou pessoas interesadas em um resumo dos momentos mais importan
 <img width="1920" height="1080" alt="Captura de Tela (30)" src="https://github.com/user-attachments/assets/dd10eff9-e59b-424c-962b-09da1693c0aa" />
 
 ### Organização da equipe
-Aline Abdalla - CSS
-Enzo Feltrin - Java Script
-Gabrielle Pavani - CSS
-Pedro Lopes - Organizar o repositorio, subir o site no github pages e ajustar partes do código
-Renan Bertaci - HTML
+- Aline Abdalla - CSS
+- Enzo Feltrin - Java Script
+- Gabrielle Pavani - CSS
+- Pedro Lopes - Organizar o repositorio, subir o site no github pages e ajustar partes do código
+- Renan Bertaci - HTML
 
 ### Desafios
 - Fazer as animações
